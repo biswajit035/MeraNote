@@ -16,7 +16,7 @@ function Navbar() {
         <Link className="navbar-brand" to="#">MeraNote</Link>
         {localStorage.getItem('token') && <div className="navbar-nav ">
           <Link className={`nav-item nav-link ${location.pathname === "/" ? "active" : ""}`} to="/" >Home</Link>
-          <Link className={`nav-item nav-link ${location.pathname === "/About" ? "active" : ""}`} to="/about">About</Link>
+          {/* <Link className={`nav-item nav-link ${location.pathname === "/About" ? "active" : ""}`} to="/about">About</Link> */}
         </div>}
         {localStorage.getItem('token') ?
           <button className='btn btn-primary' onClick={handleLogout} >Logout</button>
