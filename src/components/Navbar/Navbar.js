@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import './navbar.css'
 
 
 function Navbar() {
@@ -21,8 +22,8 @@ function Navbar() {
         {localStorage.getItem('token') ?
           <button className='btn btn-primary' onClick={handleLogout} >Logout</button>
           : <form className="form-inline d-flex flex-row-reverse ">
-            <Link className="btn btn-outline-primary my-2 my-sm-0 mx-3" to="/login" role="button">Login</Link>
-            <Link className="btn btn-outline-primary my-2 my-sm-0 " to="/signup" role="button">Signup</Link>
+            <Link className="btn btn-outline-primary my-2 my-sm-0 mx-3 nav-login" to="/login" role="button">Login</Link>
+            <Link className="btn btn-outline-primary my-2 my-sm-0 nav-signup" to="/signup" role="button">Signup</Link>
           </form>}
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
