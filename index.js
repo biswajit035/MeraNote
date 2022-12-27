@@ -2,6 +2,7 @@ const path = require("path");
 const express = require('express')
 var cors = require('cors')
 const connectToMongo = require('./db')
+require('dotenv').config();
 
 const app = express()
 app.use(express.static(path.resolve(__dirname, "./client/build")));
