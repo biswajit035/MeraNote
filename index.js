@@ -13,6 +13,7 @@ app.use(express.json())
 
 //available routes
 app.get('/',function (req,res){res.send("hellow brother")})
+app.get('/kolkata',function (req,res){res.send("hellow brother welcome to kolkata")})
 app.use('/api/auth', require('./Routes/auth'))
 app.use('/api/notes', require('./Routes/notes'))
 
