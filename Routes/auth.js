@@ -23,6 +23,7 @@ router.post("/createuser",[
     }
     try {
         //check if Email is unique or not
+        console.log("hellow from cyclic");
         let user = await User.findOne({email: req.body.email});
         if(user){
             return res.status(400).json({success, error: "This email already exists"})
