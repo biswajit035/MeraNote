@@ -66,7 +66,6 @@ router.post('/login',[
     try {
         let user = await User.findOne({email});
         if(!user){
-            console.log("user nahi hai");
             return res.status(400).json({error: "email does not exists"})
         }
 

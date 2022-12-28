@@ -13,7 +13,6 @@ router.get("/fetchallnotes", fetchuser, async (req, res) => {
 
 // Route 2: create notes using: POST "/api/notes/addnote" [login required]
 router.post("/addnote", fetchuser, async (req, res) => {
-    console.log("good");
     const { title, description, tag } = req.body;
     try {
         const note = new Notes({
@@ -43,7 +42,6 @@ router.put('/update/:id', fetchuser,async(req,res)=>{
     if (note.user.toString() !== req.user.id)
     { return res.status(401).send("NOT ALLOWED");
     }
-    // console.log("point 1");
     note = await Notes.findByIdAndUpdate(req.params.id,{$set: newNote}, {new:true})
     res.json({newNote})
     } catch (error) {
@@ -68,7 +66,6 @@ router.delete('/delete/:id', fetchuser,async(req,res)=>{
     if (note.user.toString() !== req.user.id)
     { return res.status(401).send("NOT ALLOWED");
     }
-    // console.log("point 1");
     note = await Notes.findByIdAndDelete(req.params.id)
     res.json({"success":"Note has been deleted"})
     } catch (error) {

@@ -13,9 +13,7 @@ app.use(express.json())
 
 
 //available routes
-app.get('/',function (req,res){res.send("hellow brother")})
-app.get('/kolkata',function (req,res){res.send(process.env.NODE_ENV)})
-app.get('/city', function (req, res) { res.send(process.env.DATABASE_PASS)})
+app.get('/',function (req,res){res.send("checking backend")})
 app.use('/api/auth', require('./Routes/auth'))
 app.use('/api/notes', require('./Routes/notes'))
 

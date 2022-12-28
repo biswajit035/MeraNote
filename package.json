@@ -1,13 +1,14 @@
 {
   "name": "backend",
-  "version": "1.0.0" ,
+  "version": "0.0.0-development",
   "description": "",
   "main": "index.js",
   "scripts": {
     "nodemon": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./index.js",
-    "devstart": "nodemon ./index.js"
+    "devstart": "nodemon ./index.js",
+    "semantic-release": "semantic-release"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,17 @@
     "mongoose": "^6.2.10"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "semantic-release": "^19.0.5"
+  },
+  "release": {
+    "branches": ["main","next"]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/biswajit035/MeraNote.git"
   }
 }
