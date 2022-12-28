@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Signup = (props) => {
-  const host = "http://localhost:8000/"
-  // const host = "https://meranoteserver.herokuapp.com/"
+  const val = process.env.REACT_APP_SECRET_NAME
+  const host = val ? val : "http://localhost:8000/"
   const { showalert } = props
   let navigate = useNavigate();
   const [cred, setCred] = useState({
@@ -51,7 +51,7 @@ const Signup = (props) => {
               <label htmlFor="email ">Email address</label>
               <input type="email" onChange={onChange} name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
               <label htmlFor="password">Password</label>
-          <input type="password" onChange={onChange} name="password" id="password" placeholder="Password" minlength="5" />
+          <input type="password" onChange={onChange} name="password" id="password" placeholder="Password" minLength="5" />
             <button type="submit" className="signup_btn">Signup</button>
           </form>
         </div>

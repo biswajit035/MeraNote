@@ -4,8 +4,8 @@ import NoteContext from './NoteContext';
 const NoteState = (props) => {
     const notesinitial = []
     const [notes, setnotes] = useState(notesinitial)
-    const host = "http://localhost:8000/"
-  // const host = "https://meranoteserver.herokuapp.com/"
+    const val = process.env.REACT_APP_SECRET_NAME
+    const host = val ? val : "http://localhost:8000/"
     // get Notes
     const getNotes = async() => {
         // API call

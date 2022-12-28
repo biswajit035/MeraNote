@@ -4,8 +4,8 @@ import '../../home.css'
 
 
 const Login = (props) => {
-  const host = "http://localhost:8000/"
-  // const host = "https://meranoteserver.herokuapp.com/"
+  const val = process.env.REACT_APP_SECRET_NAME
+  const host = val ? val : "http://localhost:8000/"
   const { showalert } = props
   const [cred, setCred] = useState({
     email: "",
@@ -54,7 +54,7 @@ const Login = (props) => {
           <label htmlFor="email">Email address</label>
           <input type="email" onChange={onChange} name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" />
           <label htmlFor="password">Password</label>
-          <input type="password" onChange={onChange} name="password" id="password" placeholder="Password" />
+          <input type="password" onChange={onChange} name="password" id="password" placeholder="Password" minLength="5"/>
           <div className='forgotpassword'>Forgot password?</div>
           <button type="submit" className="login_btn">Login</button>
         </form>
