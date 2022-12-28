@@ -10,11 +10,8 @@ const connectToMongo=async()=>{
         // else {
         //     mongoURI = "mongodb://mongodb:27017"
         // }
-        console.log("ID:" + process.env.DATABASE_ID);
-        console.log("PASS:" + process.env.DATABASE_PASS);
-        await mongoose.connect(`mongodb+srv://${process.env.DATABASE_ID}:${process.env.DATABASE_PASS}@cluster0.4m23f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, { useNewUrlParser: true});
+        const conn = await mongoose.connect(`mongodb+srv://${process.env.DATABASE_ID}:${process.env.DATABASE_PASS}@cluster0.4m23f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, { useNewUrlParser: true});
     } catch (error) {
-        console.log("nahi huya re connect");
         console.log(error);
     }
     

@@ -8,7 +8,7 @@ const app = express()
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 app.use(cors())
 let port = process.env.PORT || 8000;
-connectToMongo();
+
 app.use(express.json())
 
 
@@ -25,7 +25,8 @@ if (process.env.NODE_ENV === "production") {
         res.sendFile(path.resolve(__dirname, "build", "index.html"));
     });
 }
-
-app.listen(port, () => {
-    console.log(`http://localhost:${port}/`)
+connectToMongo().then(()=>{
+    app.listen(port, () => {
+        console.log(`http://localhost:${port}/`)
+    })
 })
