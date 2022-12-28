@@ -19,12 +19,15 @@ app.get('/city', function (req, res) { res.send(process.env.DATABASE_PASS)})
 app.use('/api/auth', require('./Routes/auth'))
 app.use('/api/notes', require('./Routes/notes'))
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("build"));
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "build", "index.html"));
-    });
-}
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (_, res) {
+    res.sendFile(
+        path.join(__dirname, "./client/build/index.html"),
+        function (err) {
+            res.status(500).send(err);
+        }
+    );
+});
 connectToMongo().then(()=>{
     app.listen(port, () => {
         console.log(`http://localhost:${port}/`)
