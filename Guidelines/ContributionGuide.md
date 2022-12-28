@@ -28,6 +28,6 @@
 
 <br/>
 
-**You'll be needing to follow the [Setup Guidelines](https://github.com/IAmTamal/Milan/blob/main/rules/) for more details on setting up the code in your local machine**
+**You'll be needing to follow the [Setup Guidelines](https://github.com/biswajit035/MeraNote/tree/main/Guidelines) for more details on setting up the code in your local machine**
 
 
