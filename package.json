@@ -23,11 +23,13 @@
     "mongoose": "^6.2.10"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15",
-    "semantic-release": "^19.0.5"
+    "nodemon": "^2.0.15"
   },
   "release": {
-    "branches": ["main","next"]
+    "branches": [
+      "main",
+      "next"
+    ]
   },
   "publishConfig": {
     "access": "public"
